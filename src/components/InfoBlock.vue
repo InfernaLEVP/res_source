@@ -174,7 +174,7 @@ export default {
       e.preventDefault();
 
       let valid = true;
-      if(this.form.name === ''){
+      if(this.searchName === ''){
         document.getElementById('name').classList.add('validation-error');
         valid = false;
       }
@@ -193,6 +193,12 @@ export default {
 
       if(valid){
         // localhost:9000/render
+        if(this.form.name === ''){
+          this.form.name = {
+            index: 0,
+            actualName: this.searchName
+          }
+        }
         this.wait = false;
         async function postData(url = '', data = {}) {
           const response = await fetch(url, {
@@ -206,7 +212,7 @@ export default {
           });
           return response.json(); 
         }
-        postData('http://161.35.96.151:9000/render', this.form)
+        postData('http://dedmoroz-rt.com:9000/render', this.form)
           .then(data => {
             console.log('FINISHED');
             console.log(data);
@@ -217,6 +223,7 @@ export default {
           })
           .catch(err => {
             console.log('FINISHED with error');
+            alert('Что-то пошло не так. Попробуйте еще раз');
             this.wait = true;
           });
       }
@@ -293,14 +300,14 @@ export default {
   }
   @media (max-width: 768px) {
     .info-block {
-      max-width: 65%;
+      max-width: 100%;
     }
   }
 
   .info-block img{
     width: 100%;
   }
-  @media(max-width:768px){
+  @media(max-width:992px){
     .info-block img{
       height: 100%;
       object-fit: cover;
@@ -365,6 +372,12 @@ export default {
     width: 13vw;
     height: 13vw;
   }
+  @media(max-width: 1200px){
+    .form::before{
+      width: 10vw;
+      height: 10vw;
+    }
+  }
 
   /*  */
   .form::after{
@@ -425,6 +438,7 @@ export default {
   @media (max-width: 1200px) {
     .input__inline input[type=text] {
       line-height: 28px;
+      font-size: 16px;
     }
   }
 

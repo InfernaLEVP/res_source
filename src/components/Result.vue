@@ -2,7 +2,7 @@
   <div class="result">
 
     <div class="video__wrapper" id="video__wrapper">
-      <video id="vid" src="/videos/sample.mp4" poster="../assets/poster.jpg"></video>
+      <video id="vid" :src="`http://dedmoroz-rt.com/out/${fileName}`" poster="../assets/poster.jpg"></video>
       <div class="play" @click="play()" id="play-btn">
         <img src="../assets/play.png" alt="">
       </div>
@@ -10,14 +10,14 @@
     </div>
 
     <div class="video__link">
-      <div class="link__text"><input type="text" readonly id="link" :value="`http://161.35.96.151/out/${fileName}`"></div>
+      <div class="link__text"><input type="text" readonly id="link" :value="`http://dedmoroz-rt.com/out/${fileName}`"></div>
       <div class="link__button" @click="copy()">Cкопировать ссылку</div>
 
       <div class="copied-message">Скопировано</div>
     </div>
 
     <div class="video__another">
-      <button type="submit" @click="window.location.reload()"><span>Создать еще одну новогоднюю видео-открытку</span></button>
+      <button type="submit" onclick="window.location.reload()"><span>Создать еще одну новогоднюю видео-открытку</span></button>
     </div>
     
   </div>
@@ -27,6 +27,17 @@
 export default {
  props: {
    fileName: String
+ },
+ mounted(){
+  const wrapper =  document.getElementById('video__wrapper').offsetWidth;
+  console.log(wrapper * 0.5625);
+  document.getElementById('vid').style.height = (wrapper * 0.5625) + 'px';
+
+  function reportWindowSize() {
+    const wrapper =  document.getElementById('video__wrapper').offsetWidth;
+    document.getElementById('vid').style.height = (wrapper * 0.5625) + 'px';
+  }
+  window.addEventListener('resize', reportWindowSize);
  },
  methods: {
    copy(){
@@ -43,7 +54,7 @@ export default {
     document.getElementById('vid').play();
     document.getElementById('video__wrapper').classList.add('no-after');
     document.querySelector('#play-btn').style.display = 'none'; 
-    document.getElementById('pause').style.display = 'flex';
+    // document.getElementById('pause').style.display = 'flex';
    }
  }
 }
@@ -54,6 +65,7 @@ export default {
   position: absolute;
   top: 0;
   left: 0;
+  right: 0;
   padding: 40px;
   height: 100%;
   display: flex;
@@ -64,11 +76,18 @@ export default {
   .result{
     position: relative;
     padding: 40px 20px;
+    height: auto;
   }
 }
 .result video{
   max-width: 100%;
   object-fit: cover;
+}
+@media(max-width: 992px){
+  .result video{
+    max-width: 100%;
+    object-fit: contain;
+  }
 }
 .play{
   width: 120px;
@@ -203,6 +222,15 @@ export default {
   /*  */
   .link__button{
     cursor: pointer;
+  }
+
+  .link__text{
+    flex: 1;
+  }
+  @media(max-width: 992px){
+    .link__text{
+      width: 100%;
+    }
   }
 
   .dis{

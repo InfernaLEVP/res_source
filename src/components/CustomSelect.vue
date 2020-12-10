@@ -154,6 +154,13 @@ export default {
   user-select: none;
   transition: all .3s;
 }
+@media(max-width: 992px){
+  .custom-select .items div {
+    border-bottom: 1px solid #273a65;
+    line-height: 1.1;
+    padding: 0.5rem;
+  }
+}
 
 .custom-select .items div:hover {
   background-color: #273a65;

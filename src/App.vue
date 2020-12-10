@@ -67,6 +67,7 @@ body{
   color: white;
   padding-top: 20px;
   position: relative;
+  min-height: 100vh;
 }
 @media(max-width: 992px){
   #app{
@@ -94,6 +95,7 @@ body{
   display: flex;
   pointer-events: none;
   max-width: 18%;
+  align-items: flex-start;
 }
 .app__lines{
   position: absolute;
@@ -102,6 +104,7 @@ body{
   display: flex;
   pointer-events: none;
   max-width: 18%;
+  align-items: flex-start;
 }
 
 
@@ -148,7 +151,7 @@ body{
   color: #ffbd00;
   white-space: nowrap;
 }
-@media(max-width: 390px){
+@media(max-width: 768px){
    .title__white {
     white-space: normal;
   }
@@ -159,5 +162,11 @@ body{
 
 main{
   padding-bottom: 15vh;
+}
+
+@media screen and (max-width: 767px) {
+  input, select, textarea {
+    font-size: 16px!important;
+  }
 }
 </style>

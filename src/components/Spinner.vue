@@ -28,6 +28,11 @@ export default {
   animation-duration: 6s;
   animation-iteration-count: infinite;
 }
+@media(max-width: 992px){
+  .spinner__image img{
+    position: relative!important;
+  }
+}
 .spinner__text{
   color: #fff;
   white-space: nowrap;
