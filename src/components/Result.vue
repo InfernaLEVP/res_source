@@ -2,15 +2,15 @@
   <div class="result">
 
     <div class="video__wrapper" id="video__wrapper">
-      <video id="vid" :src="`http://dedmoroz-rt.com/out/${fileName}`" poster="../assets/poster.jpg"></video>
+      <!-- <video id="vid" :src="`http://dedmoroz-rt.com/out/${fileName}`" poster="../assets/poster.jpg"></video>
       <div class="play" @click="play()" id="play-btn">
         <img src="../assets/play.png" alt="">
-      </div>
-      
+      </div> -->
+      <h1>Твоё видео будет готово через пару минут и доступно по ссылке</h1>
     </div>
 
     <div class="video__link">
-      <div class="link__text"><input type="text" readonly id="link" :value="`http://dedmoroz-rt.com/out/${fileName}`"></div>
+      <div class="link__text"><textarea readonly id="link" v-model="file"></textarea></div>
       <div class="link__button" @click="copy()">Cкопировать ссылку</div>
 
       <div class="copied-message">Скопировано</div>
@@ -25,19 +25,27 @@
 
 <script>
 export default {
+  data(){
+    return{
+      file: '',
+    }
+  },
  props: {
-   fileName: String
+   fileName: String,
+   domain: String
  },
  mounted(){
-  const wrapper =  document.getElementById('video__wrapper').offsetWidth;
-  console.log(wrapper * 0.5625);
-  document.getElementById('vid').style.height = (wrapper * 0.5625) + 'px';
+  // const wrapper =  document.getElementById('video__wrapper').offsetWidth;
+  // console.log(wrapper * 0.5625);
+  // document.getElementById('vid').style.height = (wrapper * 0.5625) + 'px';
 
-  function reportWindowSize() {
-    const wrapper =  document.getElementById('video__wrapper').offsetWidth;
-    document.getElementById('vid').style.height = (wrapper * 0.5625) + 'px';
-  }
-  window.addEventListener('resize', reportWindowSize);
+  // function reportWindowSize() {
+  //   const wrapper =  document.getElementById('video__wrapper').offsetWidth;
+  //   document.getElementById('vid').style.height = (wrapper * 0.5625) + 'px';
+  // }
+  // window.addEventListener('resize', reportWindowSize);
+
+  this.file += window.location.origin + '/videoview?video=' + this.fileName + '&sub=' + this.domain;
  },
  methods: {
    copy(){
@@ -107,6 +115,7 @@ export default {
   height: auto;
   margin: 0 auto;
   position: relative;
+  text-align: center;
 }
 @media(max-width: 992px){
   .video__wrapper{
@@ -123,6 +132,7 @@ export default {
   width: 100%;
   height: 100%;
   background: rgba(39,58,101,.6);
+  display: none;
 }
 
 /*  */
@@ -194,6 +204,7 @@ export default {
   #link{
     border: none;
     background: transparent;
+    width: 100%;
   }
   #link:focus{
     outline: none;
@@ -209,6 +220,10 @@ export default {
     left: 0;
     right: 0;
     text-align: center;
+    z-index: 666;
+    background: rgba(255,255,255,.95);
+    padding: 8px 10px;
+    border-radius: 8px;
   }
 
   /*  */
@@ -222,6 +237,8 @@ export default {
   /*  */
   .link__button{
     cursor: pointer;
+    display: flex;
+    align-items: center;
   }
 
   .link__text{
@@ -240,5 +257,11 @@ export default {
   }
   .no-after::after{
     display: none!important;
+  }
+  .result textarea{
+    resize: none;
+    line-height: 1;
+    display: flex;
+    align-items: center;
   }
 </style>

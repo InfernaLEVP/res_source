@@ -4,16 +4,23 @@
     <div class="app__lines"><img src="./assets/left-btm.png" alt=""></div>
     <div class="container">
       <header class="header">
+        <img class="candy candy-1" src="./assets/candy.png" alt="">
+        <img class="candy candy-2" src="./assets/candy.png" alt="">
+        <img class="snowflake snowflake-1" src="./assets/snowflake.svg" alt="">
+        <img class="snowflake snowflake-2" src="./assets/snowflake.svg" alt="">
+        <img class="snowflake snowflake-3" src="./assets/snowflake.svg" alt="">
+        <img class="tree tree-1" src="./assets/tree.png" alt="">
         <div class="logo">
-          <img src="./assets/logo.png" alt="">
+          <img src="./assets/logo.svg" alt="">
         </div>
-        <div class="header__title title">
+        <div :class="['header__title title', isFront ? '' : 'viewpage' ]">
           <div class="title__white">Отправь коллеге</div>
-          <div class="title__yellow">Новогоднюю видео-открытку!</div>
+          <div class="title__yellow">новогоднюю видео-открытку!</div>
         </div>
     </header>
     <main class="container">
-      <InfoBlock />
+      <router-view></router-view>
+      
     </main>
     </div>
     
@@ -31,6 +38,11 @@ export default {
   components: {
     HelloWorld,
     InfoBlock,
+  },
+  computed: {
+    isFront(){
+      return this.$route.name == 'Home' ? true : false;
+    }
   }
 }
 </script>
@@ -40,6 +52,13 @@ export default {
   font-family: "RostelecomBasis-Bold";
   src: url("/fonts/RostelecomBasis-Bold.woff") format("woff"), /* Modern Browsers */
     url("/fonts/RostelecomBasis-Bold.woff2") format("woff2"); /* Modern Browsers */
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face{
+  font-family: "RostelecomBasis-Light";
+  src: url("/fonts/RostelecomBasis-Light.woff") format("woff"), /* Modern Browsers */
+    url("/fonts/RostelecomBasis-Light.woff2") format("woff2"); /* Modern Browsers */
   font-weight: normal;
   font-style: normal;
 }
@@ -65,19 +84,44 @@ body{
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: white;
-  padding-top: 20px;
+  padding-top: 65px;
   position: relative;
   min-height: 100vh;
+  padding-bottom: 29vh;
+  /* overflow: hidden; */
+  overflow-x: hidden;
 }
 @media(max-width: 992px){
   #app{
     background-position: 20% 50%;
+    padding-top: 25px;
+    background: #273a65;
   }
 }
 
 .container{
-  max-width: 70vw;
+  max-width: 66vw;
   margin: 0 auto;
+}
+@media(max-width: 1400px){
+   .container {
+    max-width: 75vw;
+  }
+}
+@media(max-width: 1300px){
+   .container {
+    max-width: 80vw;
+  }
+}
+@media(max-width: 1200px){
+   .container {
+    max-width: 85vw;
+  }
+}
+@media(max-width: 1100px){
+   .container {
+    max-width: 94vw;
+  }
 }
 @media(max-width: 992px){
    .container {
@@ -86,15 +130,20 @@ body{
 }
 
 .logo{
-  max-width: 220px;
+  max-width: 295px;
+}
+@media(max-width: 768px){
+  .logo{
+    max-width: 50%;
+  }
 }
 .app__balls{
   position: absolute;
   top: 0;
-  right: 8%;
+  right: 6%;
   display: flex;
   pointer-events: none;
-  max-width: 18%;
+  max-width: 22%;
   align-items: flex-start;
 }
 .app__lines{
@@ -103,14 +152,17 @@ body{
   right: 0;
   display: flex;
   pointer-events: none;
-  max-width: 18%;
+  max-width: 26%;
   align-items: flex-start;
 }
 
-
+.header{
+  position: relative;
+}
 .header__title{
-  margin-top: 3rem;
-  font-size: 60px;
+  margin-top: 3.5rem;
+  line-height: 1.1;
+  font-size: 84px;
   text-align: center;
 }
 @media (max-width: 1500px) {
@@ -161,12 +213,73 @@ body{
 }
 
 main{
-  padding-bottom: 15vh;
+  /* padding-bottom: 15vh; */
 }
 
 @media screen and (max-width: 767px) {
   input, select, textarea {
-    font-size: 16px!important;
+    /* font-size: 16px!important; */
   }
+}
+.candy{
+  position: absolute;
+  display: none;
+}
+.snowflake{
+  position: absolute;
+  display: none;
+}
+.tree{
+  position: absolute;
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  .candy{
+    width: 25px;
+    display: flex;
+  }
+  .snowflake{
+    width: 25px;
+    display: flex;
+  }
+  .tree{
+    width: 25px;
+    display: flex;
+  }
+  .candy-1{
+    top: 63%;
+    left: 10%;
+  }
+  .candy-2{
+    top: 83px;
+    right: 24%;
+  }
+  .snowflake-1{
+    bottom: 0;
+    right: 0;
+  }
+  .snowflake-2{
+    bottom: 0;
+    left: 0;
+  }
+  .snowflake-3{
+    left: 0;
+    right: 0;
+    bottom: -18%;
+    margin: 0 auto;
+  }
+  .tree-1{
+    right: 0;
+    top: 35%;
+  }
+}
+@media(max-width: 600px){
+  .candy-1{
+    top: 46%;
+    left: 5%;
+  }
+}
+.viewpage{
+  opacity: 0;
 }
 </style>

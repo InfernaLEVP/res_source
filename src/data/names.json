@@ -15,7 +15,7 @@
   {
     "FullName": "Наталья",
     "ALternative": "Наталия",
-    "ShortName": "Наташа",
+    "ShortName": "Наташа, Наталия",
     "index": 6
   },
   { "FullName": "Людмила", "ALternative": "", "ShortName": "Люда", "index": 7 },
@@ -24,7 +24,7 @@
   {
     "FullName": "Елена",
     "ALternative": "",
-    "ShortName": "Лена, Алена, Алёна",
+    "ShortName": "Лена",
     "index": 10
   },
   {
@@ -80,7 +80,7 @@
   {
     "FullName": "Александр",
     "ALternative": "",
-    "ShortName": "Саня",
+    "ShortName": "Саня, Саша",
     "index": 26
   },
   {
@@ -110,7 +110,7 @@
   {
     "FullName": "Александра",
     "ALternative": "",
-    "ShortName": "",
+    "ShortName": "Саша",
     "index": 31
   },
   {
@@ -131,6 +131,12 @@
   { "FullName": "Иван", "ALternative": "", "ShortName": "Ваня", "index": 37 },
   { "FullName": "Анна", "ALternative": "", "ShortName": "Аня", "index": 38 },
   {
+    "FullName": "Владислав",
+    "ALternative": "",
+    "ShortName": "Влад",
+    "index": 69
+  },
+  {
     "FullName": "Владимир",
     "ALternative": "",
     "ShortName": "Вова, Володя",
@@ -142,7 +148,7 @@
   {
     "FullName": "Евгений",
     "ALternative": "",
-    "ShortName": "Жека",
+    "ShortName": "Жека, Женя",
     "index": 43
   },
   { "FullName": "Михаил", "ALternative": "", "ShortName": "Миша", "index": 44 },
@@ -158,6 +164,12 @@
   { "FullName": "Кира", "ALternative": "", "ShortName": "", "index": 49 },
   { "FullName": "Давид", "ALternative": "", "ShortName": "", "index": 50 },
   { "FullName": "Павел", "ALternative": "", "ShortName": "Паша", "index": 51 },
+  {
+    "FullName": "Валерия",
+    "ALternative": "",
+    "ShortName": "Лера",
+    "index": 65
+  },
   {
     "FullName": "Валерий",
     "ALternative": "",
@@ -188,7 +200,7 @@
   {
     "FullName": "Артем",
     "ALternative": "Артём, Артемий",
-    "ShortName": "Тема, Тёма",
+    "ShortName": "Тема, Тёма, Артём, Артемий",
     "index": 59
   },
   { "FullName": "Никита", "ALternative": "", "ShortName": "", "index": 60 },
@@ -201,21 +213,10 @@
     "index": 63
   },
   { "FullName": "Дарья", "ALternative": "", "ShortName": "Даша", "index": 64 },
-  {
-    "FullName": "Валерия",
-    "ALternative": "",
-    "ShortName": "Лера",
-    "index": 65
-  },
   { "FullName": "Лариса", "ALternative": "", "ShortName": "Лара", "index": 66 },
   { "FullName": "Лилия", "ALternative": "", "ShortName": "Лиля", "index": 67 },
   { "FullName": "Алина", "ALternative": "", "ShortName": "", "index": 68 },
-  {
-    "FullName": "Владислав",
-    "ALternative": "",
-    "ShortName": "Влад",
-    "index": 69
-  },
+  
   { "FullName": "Полина", "ALternative": "", "ShortName": "", "index": 70 },
   { "FullName": "Алла", "ALternative": "", "ShortName": "", "index": 71 },
   { "FullName": "Олеся", "ALternative": "", "ShortName": "", "index": 72 },
@@ -238,6 +239,12 @@
     "index": 80
   },
   {
+    "FullName": "Ростислав",
+    "ALternative": "",
+    "ShortName": "Слава",
+    "index": 109
+  },
+  {
     "FullName": "Вячеслав",
     "ALternative": "",
     "ShortName": "Слава",
@@ -246,13 +253,13 @@
   {
     "FullName": "Петр",
     "ALternative": "Пётр",
-    "ShortName": "Петя",
+    "ShortName": "Петя, Пётр",
     "index": 82
   },
   {
     "FullName": "Федор",
     "ALternative": "Фёдор",
-    "ShortName": "Федя",
+    "ShortName": "Федя, Фёдор",
     "index": 83
   },
   {
@@ -274,7 +281,7 @@
   {
     "FullName": "Софья",
     "ALternative": "София",
-    "ShortName": "Соня, Софа",
+    "ShortName": "Соня, Софа, София",
     "index": 90
   },
   { "FullName": "Лидия", "ALternative": "", "ShortName": "", "index": 91 },
@@ -335,12 +342,7 @@
     "ShortName": "Варя",
     "index": 108
   },
-  {
-    "FullName": "Ростислав",
-    "ALternative": "",
-    "ShortName": "Слава",
-    "index": 109
-  },
+  
   { "FullName": "Артур", "ALternative": "", "ShortName": "", "index": 110 },
   { "FullName": "Даниил", "ALternative": "", "ShortName": "", "index": 111 },
   { "FullName": "Георгий", "ALternative": "", "ShortName": "", "index": 112 },
@@ -375,7 +377,7 @@
   {
     "FullName": "Семён",
     "ALternative": "Семен",
-    "ShortName": "Сеня",
+    "ShortName": "Семен",
     "index": 126
   },
   { "FullName": "Святослав", "ALternative": "", "ShortName": "", "index": 127 },
