@@ -282,6 +282,18 @@ export default {
               actualName: 'Аня',
               FullName: 'Анна',
             }
+          }else if(this.searchName.replaceAll(' ', '').toLowerCase() === 'Алик'.toLowerCase()){
+            this.form.name = {
+              index: 0,
+              actualName: 'Алик',
+              FullName: 'Алик',
+            }
+          }else if(this.searchName.replaceAll(' ', '').toLowerCase() === 'Ася'.toLowerCase()){
+            this.form.name = {
+              index: 0,
+              actualName: 'Ася',
+              FullName: 'Ася',
+            }
           }else{
             // 
             console.log('q');
@@ -439,7 +451,7 @@ export default {
   },
   computed: {
     filteredNames(){
-      if(this.searchName.length >= 3){
+      if(this.searchName.length >= 3 && this.searchName !== 'ася' && this.searchName !== 'Ася'){
         console.log('puted');
         let names = this.names;
         let resultNames = [];
