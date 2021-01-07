@@ -88,9 +88,16 @@ export default {
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
         const video = urlParams.get('video')
-        const sub = urlParams.get('sub')
+        let sub = urlParams.get('sub')
         
         console.log(sub);
+        if(sub == 's1'){
+          sub = 's2';
+        }else if(sub == 's5'){
+          sub = 's3';
+        }else if(sub == 's6'){
+          sub = 's4';
+        }
 
         this.fileName = '';
         this.fileName = window.location.origin.replace('http://', `http://${sub}.`).replace('https://', `https://${sub}.`) + '/out/' + video;
@@ -104,7 +111,7 @@ export default {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     const video = urlParams.get('video');
-    const sub = urlParams.get('sub');
+    let sub = urlParams.get('sub');
 
     const allowed = ['s1', 's2', 's3', 's4', 's5', 's6'];
     let isNew = false;
@@ -119,6 +126,13 @@ export default {
     }
 
     console.log(video);
+    if(sub == 's1'){
+      sub = 's2';
+    }else if(sub == 's5'){
+      sub = 's3';
+    }else if(sub == 's6'){
+      sub = 's4';
+    }
     this.fileName = window.location.origin.replace('http://', `http://${sub}.`).replace('https://', `https://${sub}.`) + '/out/' + video;
     document.getElementById('vid').load();
     
@@ -301,12 +315,16 @@ export default {
   position: relative;
   text-align: center;
   flex-direction: column;
+
+  padding-top: 5vh;
   
 }
 @media(max-width: 992px){
   .video__wrapper{
     width: 100%;
     margin-bottom: 2rem;
+
+    padding-top: 2vh;
   }
 }
 .video__wrapper::after{

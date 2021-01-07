@@ -387,7 +387,8 @@ export default {
         // ============================================
 
         // // 
-        this.subDomain = 's' + this.random(0, 6);
+        // this.subDomain = 's' + this.random(1, 4);
+        this.subDomain = 's2';
           const xmlhttp = new XMLHttpRequest();   // new HttpRequest instance .replace('https://', 'http://')
           let renderUrl = '';
           
